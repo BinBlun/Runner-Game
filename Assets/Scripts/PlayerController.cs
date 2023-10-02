@@ -29,12 +29,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround == true && !gameOver) 
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver) 
         {
+            dirtParticle.Stop();
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
             playerAnim.SetTrigger("Jump_trig");
-            dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
     }
@@ -43,17 +43,18 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isOnGround = true;
             dirtParticle.Play();
+            isOnGround = true;
         } 
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("GameOver");
+            dirtParticle.Stop();
             playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 1);
             gameOver = true;
             explosionParticle.Play();
-            dirtParticle.Stop();
+            
             playerAudio.PlayOneShot(crashSound, 1.0f);
         }
         
