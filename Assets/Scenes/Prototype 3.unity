@@ -246,7 +246,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1eb5cb4eae573c4fb1f7a255f568482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 4566791214486556365, guid: ec6a4fcd137a7844692a664b347bb06f, type: 3}
+  obstaclePrefab:
+  - {fileID: 4826953591975242758, guid: f7bd0e8726859694f9e9ae78b68aef90, type: 3}
+  - {fileID: 4831566926882313364, guid: 8eb9be15e6d50d148ac3c59222263849, type: 3}
+  - {fileID: 2143991741767651788, guid: 51c254ec4b3a54841830e6f9ff8bf484, type: 3}
+  - {fileID: 7597655258475449036, guid: 598f159eacfd8c5419896b414e3995b6, type: 3}
+  - {fileID: 4566791214486556365, guid: ec6a4fcd137a7844692a664b347bb06f, type: 3}
 --- !u!4 &231986462
 Transform:
   m_ObjectHideFlags: 0
@@ -359,7 +364,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 834bc99524a174a378e982623582c06d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.101
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -518,10 +523,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionParticle: {fileID: 1714102708}
-  dirtParticle: {fileID: 1438565936, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}
+  dirtParticle: {fileID: 1456058422}
   jumpSound: {fileID: 8300000, guid: 08ab7053d586c458db3774d33c141a4b, type: 3}
   crashSound: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
-  jumpForce: 700
+  jumpForce: 500
   gravityModifier: 2
   isOnGround: 1
   gameOver: 0
@@ -571,7 +576,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.333
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -841,7 +846,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb7cd9b0c56a24d49a40784bd3203ae6, type: 3}
---- !u!1001 &1145467658
+--- !u!198 &1456058422 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1438565936, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}
+  m_PrefabInstance: {fileID: 1638940030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1638940030
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -891,6 +901,10 @@ PrefabInstance:
     - target: {fileID: 1419152992, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438565936, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}
+      propertyPath: looping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4356800953600124292, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}
       propertyPath: m_Name
